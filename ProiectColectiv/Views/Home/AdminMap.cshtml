@@ -1,0 +1,57 @@
+﻿@model ProiectColectiv.Models.User
+@{
+    ViewData["Title"] = "Admin Map";
+}
+<!DOCTYPE html>
+<style>
+    html, body, #map-container {
+        height: 100%;
+    }
+
+    #mapid {
+        height: 94vh;
+    }
+
+    .header {
+        left: 80px;
+        position: absolute;
+        top: 9vh;
+        z-index: 401;
+    }
+</style>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Map</title>
+    <link rel="stylesheet" href="~/css/map.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+          integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+          crossorigin="" />
+</head>
+<body>
+    <h1 class="header">
+        Hello, @Model.Name!
+    </h1>
+    <div id="mapid"></div>
+</body>
+</html>
+<script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+        integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+        crossorigin=""></script>
+
+<script>
+    var mymap = L.map('mapid').setView([46.776, 23.594], 13);
+
+    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png',
+        {
+            maxZoom: 18,
+            minZoom: 12,
+            attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(mymap);
+
+    var marker = L.marker([46.770, 23.592]).addTo(mymap);
+    marker.bindPopup("Parcarea Adminului");
+    L.marker([46.7825, 23.6880]).addTo(mymap).bindPopup("Parcarea lu varu!");
+
+</script>
