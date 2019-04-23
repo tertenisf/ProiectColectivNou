@@ -24,6 +24,20 @@ namespace ProiectColectiv.Models
                         Name = "Ion",
                         Email = "aiaE@aiaE.com",
                         Password = "admin",
+                        isAdmin = false
+                    },
+                new User
+                    {
+                        Name = "x",
+                        Email = "xxxx@x.com",
+                        Password = "admin",
+                        isAdmin = false
+                    },
+                new User
+                    {
+                        Name = "Admin",
+                        Email = "admin@admin.com",
+                        Password = "admin",
                         isAdmin = true
                     }
                     );

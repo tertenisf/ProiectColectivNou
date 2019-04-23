@@ -21,7 +21,7 @@ namespace ProiectColectiv.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Login([Bind("Id, Name, Username, Password")] User user)
+        public async Task<IActionResult> Login([Bind("Id, Email, Password, Name")] User user)
         {
             var users = await _context.User.FirstOrDefaultAsync(m => m.Email == user.Email);
             if (users != null && users.isAdmin == true && user.Email.Equals(users.Email) && user.Password.Equals(users.Password))

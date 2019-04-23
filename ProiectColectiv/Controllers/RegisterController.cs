@@ -1,9 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using ProiectColectiv.Models;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Net.Mail;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using ProiectColectiv.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace ProiectColectiv.Controllers
 {
@@ -24,7 +27,7 @@ namespace ProiectColectiv.Controllers
             return View("~/Views/Home/Register.cshtml", user);
         }
         [HttpPost]
-        public async Task<ActionResult> Register([Bind("Id, Name, Username, Password")] User user)
+        public async Task<ActionResult> Register([Bind("Id, Email, Password, Name")] User user)
         {
             var users = await _context.User.FirstOrDefaultAsync(m => m.Email == user.Email);
             if (users == null || !user.Email.Equals(users.Email))
