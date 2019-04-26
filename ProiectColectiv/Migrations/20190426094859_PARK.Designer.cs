@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ProiectColectiv.Models;
 
 namespace ProiectColectiv.Migrations
 {
     [DbContext(typeof(ProiectColectivContext))]
-    partial class ProiectColectivContextModelSnapshot : ModelSnapshot
+    [Migration("20190426094859_PARK")]
+    partial class PARK
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -25,9 +27,9 @@ namespace ProiectColectiv.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<double>("Latitudine");
+                    b.Property<string>("Latitudine");
 
-                    b.Property<double>("Longitudine");
+                    b.Property<string>("Longitudine");
 
                     b.Property<string>("Name");
 
