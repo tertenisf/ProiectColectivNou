@@ -35,5 +35,10 @@ namespace ProiectColectiv.Controllers
 
             return View("~/Views/Home/LoginError.cshtml");
         }
+
+        public ActionResult SignOut()
+        {
+            return RedirectToAction("Index", "Home");
+        }
     }
 }
