@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ProiectColectiv.Migrations
 {
-    public partial class PARK : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -14,14 +14,30 @@ namespace ProiectColectiv.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Name = table.Column<string>(nullable: true),
-                    Longitudine = table.Column<string>(nullable: true),
-                    Latitudine = table.Column<string>(nullable: true),
+                    Longitudine = table.Column<double>(nullable: false),
+                    Latitudine = table.Column<double>(nullable: false),
                     NrFastChargingSpots = table.Column<int>(nullable: false),
                     NrNormalChargingSpots = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Parkings", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "User",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Email = table.Column<string>(maxLength: 60, nullable: false),
+                    Password = table.Column<string>(nullable: false),
+                    Name = table.Column<string>(maxLength: 60, nullable: false),
+                    isAdmin = table.Column<bool>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_User", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -58,6 +74,9 @@ namespace ProiectColectiv.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Stations");
+
+            migrationBuilder.DropTable(
+                name: "User");
 
             migrationBuilder.DropTable(
                 name: "Parkings");

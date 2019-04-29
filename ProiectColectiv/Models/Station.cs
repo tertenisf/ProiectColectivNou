@@ -10,11 +10,11 @@ namespace ProiectColectiv.Models
     {
         public int Id { get; set; }
 
-        public bool IsFastCharging { get; set; }
-        [NotMapped]
-        public List<DateTime> Schedule { get; set; }
+        public int Id_Parking { get; set; }
 
-        public string PlateNumber { get; set; }
+        public bool IsFastCharging { get; set; }
+
+        public bool isEmpty { get; set; }
 
         public string DailyGain { get; set; }
 

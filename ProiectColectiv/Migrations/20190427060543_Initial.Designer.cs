@@ -10,8 +10,8 @@ using ProiectColectiv.Models;
 namespace ProiectColectiv.Migrations
 {
     [DbContext(typeof(ProiectColectivContext))]
-    [Migration("20190426115210_Double")]
-    partial class Double
+    [Migration("20190427060543_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
