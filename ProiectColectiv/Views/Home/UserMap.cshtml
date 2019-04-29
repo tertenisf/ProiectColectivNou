@@ -60,6 +60,12 @@
                         (function(mdl, i) {
                             return function() {
                                 infowindow[i].open(map, marker[i]);
+                                for (var j = 0; j < infowindow.length; j++) {
+                                    if (j != i) {
+                                        infowindow[j].close();
+                                    }
+
+                                }
                             }
                         })(marker[i], i));
                     //marker[i].addListener('click', function() {

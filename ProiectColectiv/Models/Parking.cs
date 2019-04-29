@@ -14,6 +14,7 @@ namespace ProiectColectiv.Models
         public double Longitudine { get; set; }
 
         public double Latitudine { get; set; }
+
         public int NrFastChargingSpots { get; set; }
 
         public int NrNormalChargingSpots { get; set; }
