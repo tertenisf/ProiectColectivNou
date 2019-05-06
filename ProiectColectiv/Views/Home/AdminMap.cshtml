@@ -50,7 +50,9 @@
                         '<p><b> Numar locuri Fast Charging: </b>' +
                         data[i].nrFastChargingSpots +
                         '<p><b> Numar locuri care nu-s Fast Charging: </b>' +
-                        data[i].nrNormalChargingSpots +'<a href="@Url.Action("Index", "ViewDetails")" ><p>View Details</a>';
+                        data[i].nrNormalChargingSpots +
+                        '<a href="@Url.Action("Index", "ViewDetails")" ><p>View Details</a>' +
+                        '<form asp-action="Edit"><div><input type="submit" value="Open" class="btn btn-primary"> <input type="submit" value="Close" class="btn btn-dark"></div></form>';                  
 
                     infowindow[i] = new google.maps.InfoWindow({
                         content: contentString[i]
