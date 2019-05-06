@@ -22,7 +22,7 @@ namespace ProiectColectiv.Models
                     new Station
                     {
                         IsFastCharging = true,
-                        PlateNumber = "SV21SCN",
+                        //PlateNumber = "SV21SCN",
                         DailyGain = "120",
                         MonthlyGain = "350",
                         WeeklyGain = "150"
@@ -30,7 +30,7 @@ namespace ProiectColectiv.Models
                     new Station
                     {
                         IsFastCharging = false,
-                        PlateNumber = "SV20SCN",
+                        //PlateNumber = "SV20SCN",
                         DailyGain = "130",
                         MonthlyGain = "450",
                         WeeklyGain = "250"
@@ -38,7 +38,7 @@ namespace ProiectColectiv.Models
                     new Station
                     {
                         IsFastCharging = false,
-                        PlateNumber = "SV18SCN",
+                        //PlateNumber = "SV18SCN",
                         DailyGain = "200",
                         MonthlyGain = "550",
                         WeeklyGain = "350"
