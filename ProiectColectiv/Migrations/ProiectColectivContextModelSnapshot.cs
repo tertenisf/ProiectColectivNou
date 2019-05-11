@@ -35,6 +35,8 @@ namespace ProiectColectiv.Migrations
 
                     b.Property<int>("NrNormalChargingSpots");
 
+                    b.Property<bool>("isClosed");
+
                     b.HasKey("Id");
 
                     b.ToTable("Parkings");
@@ -48,15 +50,17 @@ namespace ProiectColectiv.Migrations
 
                     b.Property<string>("DailyGain");
 
+                    b.Property<int>("Id_Parking");
+
                     b.Property<bool>("IsFastCharging");
 
                     b.Property<string>("MonthlyGain");
 
                     b.Property<int?>("ParkingId");
 
-                    b.Property<string>("PlateNumber");
-
                     b.Property<string>("WeeklyGain");
+
+                    b.Property<bool>("isEmpty");
 
                     b.HasKey("Id");
 

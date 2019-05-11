@@ -23,5 +23,21 @@ namespace ProiectColectiv.Controllers
             var data = _context.Parkings.ToList();
             return Json(data);
         }
+        [HttpPost]
+        public void GetAllLocationStatusById(int? id)
+        {
+            var data = _context.Parkings.Where(m => m.Id == id).SingleOrDefault();
+            if (data.isClosed)
+            {
+                data.isClosed = false;
+            }
+            else
+            {
+                data.isClosed = true;
+            }
+
+            _context.Parkings.Update(data);
+            _context.SaveChanges();
+        }
     }
 }

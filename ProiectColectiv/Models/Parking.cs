@@ -20,5 +20,6 @@ namespace ProiectColectiv.Models
         public int NrNormalChargingSpots { get; set; }
         
         public List<Station> Stations { get; set; }
+        public bool isClosed { get; set; }
     }
 }
