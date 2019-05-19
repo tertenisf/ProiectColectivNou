@@ -38,7 +38,8 @@ function initMap() {
                         data[i].nrFastChargingSpots +
                         '<p><b> Numar locuri care nu-s Fast Charging: </b>' +
                         data[i].nrNormalChargingSpots +
-                        '<p><h6>Rezervar un loc de parcare</h6></a>';
+                        '<div><input type="submit" id="' + data[i].id + '" value="Loc normal" class="btn btn-outline-success" onClick="BookingNormal(this);"></div>' +
+                        '<div><input type="submit" id="' + data[i].id + '" value="Loc Fast" class="btn btn-outline-success" onClick="BookingFast(this);"></div>';
                 }
                 infowindow[i] = new google.maps.InfoWindow({
                     content: contentString[i]
@@ -59,5 +60,21 @@ function initMap() {
                     })(marker[i], i));
             }
         });
+}
 
+function BookingNormal(button) {
+    $.post("/UserMap/BookingNormal?id=" + $(button)[0].id,
+        function (data, status) {
+            if (status == "success") {
+                location.reload();
+            }
+        });
+}
+function BookingFast(button) {
+    $.post("/UserMap/BookingFast?id=" + $(button)[0].id,
+        function (data, status) {
+            if (status == "success") {
+                location.reload();
+            }
+        });
 }
