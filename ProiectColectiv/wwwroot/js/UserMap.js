@@ -56,17 +56,41 @@ function initMap() {
 function Booking() {
     $("form").submit(function (event) {
         var date = $(this).serializeArray();
-        if (date[0].value == "")
-            alert("Numar inmatriculare invalid");
-
-        else if (date[1].value == "")
-            alert("Numar de telefon invalid");
-        else if (date[2].value == "")
-            alert("Data invalida");
-        else if (date.length == 3)
-            alert("Va rog alegeti tipul de loc dorit");
-        else {
-            alert("Rezervare facuta cu succes");
+        if (date[0].value === "") {
+            Swal.fire({
+                title: 'Numar de inmatriculare invalid!',
+                type: 'error',
+                confirmButtonText: 'Again'
+            });
+        }
+        else if (date[1].value === "") {            
+            Swal.fire({                
+                title: 'Numar de telefon invalid!',
+                type: 'error',
+                confirmButtonText: 'Again'
+            });
+        }
+        else if (date[2].value === "") {
+            Swal.fire({
+                title: 'Data invalida!',
+                type: 'error',
+                confirmButtonText: 'Again'
+            });
+        }
+        else if (date.length === 3)
+        {
+            Swal.fire({
+                title: 'Trebuie sa selectati tipul locului dorit!',
+                type: 'error',
+                confirmButtonText: 'Again'
+            });
+        }
+        else {            
+                Swal.fire({
+                    title: 'Rezervarea a fost facuta cu success!',
+                    type: 'success',
+                    confirmButtonText: 'Cool'
+                });            
             this.reset();
         }      
         event.preventDefault();
