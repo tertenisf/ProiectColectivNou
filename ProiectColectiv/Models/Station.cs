@@ -10,8 +10,6 @@ namespace ProiectColectiv.Models
     {
         public int Id { get; set; }
 
-        public int Id_Parking { get; set; }
-
         public bool IsFastCharging { get; set; }
 
         public bool isEmpty { get; set; }
@@ -21,5 +19,6 @@ namespace ProiectColectiv.Models
         public string WeeklyGain { get; set; }
 
         public string MonthlyGain { get; set; }
+        public List<Booking> bookings { get; set; }
     }
 }

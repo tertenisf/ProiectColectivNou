@@ -19,6 +19,27 @@ namespace ProiectColectiv.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("ProiectColectiv.Models.Booking", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("End_Time");
+
+                    b.Property<string>("PlateNumber");
+
+                    b.Property<DateTime>("Start_Time");
+
+                    b.Property<int?>("StationId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("StationId");
+
+                    b.ToTable("Booking");
+                });
+
             modelBuilder.Entity("ProiectColectiv.Models.Parking", b =>
                 {
                     b.Property<int>("Id")
@@ -49,8 +70,6 @@ namespace ProiectColectiv.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("DailyGain");
-
-                    b.Property<int>("Id_Parking");
 
                     b.Property<bool>("IsFastCharging");
 
@@ -91,6 +110,13 @@ namespace ProiectColectiv.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("User");
+                });
+
+            modelBuilder.Entity("ProiectColectiv.Models.Booking", b =>
+                {
+                    b.HasOne("ProiectColectiv.Models.Station")
+                        .WithMany("bookings")
+                        .HasForeignKey("StationId");
                 });
 
             modelBuilder.Entity("ProiectColectiv.Models.Station", b =>

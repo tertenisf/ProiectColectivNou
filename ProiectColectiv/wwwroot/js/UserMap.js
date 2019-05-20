@@ -116,13 +116,14 @@ function contentBooking() {
                 '<p><b> Numar locuri Fast Charging: </b>' +
                 data[index].nrFastChargingSpots +
                 '<p><b> Numar locuri care nu-s Fast Charging: </b>' +
-                data[index].nrNormalChargingSpots +
-                '<form><div><label> Nr. Inmatriculare</label><br>' + '<input type="text" name="nrmas"></div><br>' +
-                '<div><label> Nr. Telefon</label><br>' + '<input type="text" name="nrtel"></div><br>' +
-                '<div><label> Data si ora</label><br>' + '<input type="datetime-local" name="date"></div><br>' +
-                '<div><label> Tip de loc</label><br>' + '<input type="radio" name="tip" value="normal"> Normal  ' + '<input type="radio" name="tip" value="fast"> Fast-Charging </div><br>'+
-                '<div><input type="submit" id="' + data.id + '" value="Submit" class="btn btn-outline-success" onClick="Booking()"></div></form>';
-
+                data[index].nrNormalChargingSpots;
+ 
+                //'<form><div><label> Nr. Inmatriculare</label><br>' + '<input type="text" name="nrmas"></div><br>' +
+                //'<div><label> Nr. Telefon</label><br>' + '<input type="text" name="nrtel"></div><br>' +
+                //'<div><label> Data si ora</label><br>' + '<input type="datetime-local" name="date"></div><br>' +
+                //'<div><label> Tip de loc</label><br>' + '<input type="radio" name="tip" value="normal"> Normal  ' + '<input type="radio" name="tip" value="fast"> Fast-Charging </div><br>'+
+                //'<div><input type="submit" id="' + data.id + '" value="Submit" class="btn btn-outline-success" onClick="Booking()"></div></form>';
+                
             infowindow[index].setContent(contentString);
         });
 }
@@ -151,7 +152,9 @@ function contentNormal(data) {
                         data.nrFastChargingSpots +
                         '<p><b> Numar locuri care nu-s Fast Charging: </b>' +
                         data.nrNormalChargingSpots +
-                        '<div><input type="submit" id="' + data.id + '" value="Rezerva" class="btn btn-outline-success" onClick="contentBooking()"></div>';
+                        '<br/><br/><div><a href="/Booking/Booking?id=' +
+                        data.id +
+                        '"><input type="submit" value="Make a reservation" class=" btn btn-outline-warning"><div>';
             
             return contentString;    
 }
