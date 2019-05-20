@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using ProiectColectiv.Models;
 
 namespace ProiectColectiv.Controllers
@@ -26,15 +27,28 @@ namespace ProiectColectiv.Controllers
              Booking booking, int? id)
         {
             {
-                if (ModelState.IsValid)
+                booking.StationId = id.Value;
+
+                var book = await _context.Booking.FirstOrDefaultAsync(m => m.StationId == booking.StationId && m.PlateNumber == booking.PlateNumber && !CheckDates(booking, m.Start_Time, m.End_Time));
+                var lastBookingId = await _context.Booking.LastOrDefaultAsync();
+                booking.Id = lastBookingId.Id + 1;
+
+                if (book == null || !booking.StationId.Equals(book.StationId))
                 {
                     _context.Add(booking);
                     await _context.SaveChangesAsync();
-                    return RedirectToAction("UserMap", "UserMap");
+                    
+                    return RedirectToAction("UserMap", "UserMap", new { callbackSuccess = 1 });
                 }
 
-                return RedirectToAction("Booking", "Booking");
+                return RedirectToAction("Booking", "Booking", new { id = id.Value });
             }
+        }
+
+        private bool CheckDates(Booking bookingReq, DateTime startDate, DateTime endDate)
+        {
+            return (bookingReq.Start_Time < startDate && bookingReq.End_Time < startDate) ||
+                    (bookingReq.Start_Time > endDate && bookingReq.End_Time > endDate);
         }
     }
 }

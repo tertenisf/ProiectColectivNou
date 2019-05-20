@@ -43,6 +43,7 @@ function initMap() {
                                     }
                                     else {
                                         infowindow[i].setContent(contentNormal(data[i]));
+                                        localStorage.setItem("StationId", data[i].id);
                                     }
                                     infowindow[j].close();
                                 }

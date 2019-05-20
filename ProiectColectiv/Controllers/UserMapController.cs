@@ -13,9 +13,9 @@ namespace ProiectColectiv.Controllers
             _context = context;
         }
         // GET
-        public ActionResult UserMap(User user)
+        public ActionResult UserMap(User user, int? callbackSuccess)
         {
-            return View("~/Views/Home/UserMap.cshtml", user);
+            return View("~/Views/Home/UserMap.cshtml", callbackSuccess);
         }
         public JsonResult GetAllLocation()
         {

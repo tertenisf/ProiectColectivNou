@@ -17,5 +17,6 @@ namespace ProiectColectiv.Models
         public DbSet<ProiectColectiv.Models.User> User { get; set; }
         public DbSet<ProiectColectiv.Models.Station> Stations { get; set; }
         public DbSet<ProiectColectiv.Models.Parking> Parkings { get; set; }
+        public DbSet<ProiectColectiv.Models.Booking> Booking { get; set; }
     }
 }
