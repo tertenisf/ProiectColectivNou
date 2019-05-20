@@ -34,6 +34,7 @@ namespace ProiectColectiv.Controllers
             {
                 _context.Add(user);
                 await _context.SaveChangesAsync();
+
                 return View("~/Views/Home/RegisterSuccess.cshtml");
             }
             return View("~/Views/Home/RegisterError.cshtml");

@@ -14,5 +14,8 @@ namespace ProiectColectiv.Models
         public DateTime End_Time { get; set; }
 
         public string PlateNumber { get; set; }
+
+        public int StationId { get; set; }
+
     }
 }

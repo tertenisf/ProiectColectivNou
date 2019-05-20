@@ -19,6 +19,7 @@ namespace ProiectColectiv.Models
         public string WeeklyGain { get; set; }
 
         public string MonthlyGain { get; set; }
+
         public List<Booking> bookings { get; set; }
     }
 }

@@ -18,6 +18,16 @@ html {
   }
 }
 
+.centerForm{
+    align-items:center;
+    display:flex;
+    align-content:center;
+    flex-direction:column;
+    flex-wrap:wrap;
+    margin-top:15%;
+}
+
+
 .border-top {
   border-top: 1px solid #e5e5e5;
 }

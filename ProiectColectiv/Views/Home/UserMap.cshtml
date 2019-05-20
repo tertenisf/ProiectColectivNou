@@ -1,4 +1,4 @@
-﻿@*@model ProiectColectiv.Models.Parking*@
+﻿@model int
 @{
     ViewData["Title"] = "User Map";
 }
@@ -24,7 +24,15 @@
 </head>
 <body>
 <div id="map"></div>
-
+    <script>
+        $(document).ready(function () {
+            console.log("sugi pula");
+            var showConfirmBooking = @Model;
+            if (showConfirmBooking) {
+                alert('Booking succesful!');   
+            }
+        });
+    </script>
     <script src="~/js/UserMap.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9HfqjqR0VDGD5N1sCd_nU8qC7J5SXATM&callback=initMap"
             async defer></script>
