@@ -22,5 +22,27 @@ namespace ProiectColectiv.Controllers
             var data = _context.Parkings.ToList();
             return Json(data);
         }
+        [HttpPost]
+        public void BookingNormal(int? id)
+        {
+            var data = _context.Parkings.Where(m => m.Id == id).SingleOrDefault();
+            if (data.NrNormalChargingSpots != 0)
+            {
+                data.NrNormalChargingSpots -=1;
+            }
+            _context.Parkings.Update(data);
+            _context.SaveChanges();
+        }
+        [HttpPost]
+        public void BookingFast(int? id)
+        {
+            var data = _context.Parkings.Where(m => m.Id == id).SingleOrDefault();
+            if (data.NrFastChargingSpots != 0)
+            {
+                data.NrFastChargingSpots -= 1;
+            }
+            _context.Parkings.Update(data);
+            _context.SaveChanges();
+        }
     }
 }
