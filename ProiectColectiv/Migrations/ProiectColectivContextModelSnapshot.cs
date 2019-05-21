@@ -27,11 +27,15 @@ namespace ProiectColectiv.Migrations
 
                     b.Property<DateTime>("End_Time");
 
+                    b.Property<bool>("IsFastCharging");
+
                     b.Property<string>("PlateNumber");
 
                     b.Property<DateTime>("Start_Time");
 
-                    b.Property<int>("StationId");
+                    b.Property<int?>("StationId");
+
+                    b.Property<int>("Station_Id");
 
                     b.HasKey("Id");
 
@@ -116,8 +120,7 @@ namespace ProiectColectiv.Migrations
                 {
                     b.HasOne("ProiectColectiv.Models.Station")
                         .WithMany("bookings")
-                        .HasForeignKey("StationId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("StationId");
                 });
 
             modelBuilder.Entity("ProiectColectiv.Models.Station", b =>

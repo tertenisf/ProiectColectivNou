@@ -92,7 +92,7 @@ namespace ProiectColectiv.Models
                         Start_Time = DateTime.Now,
                             End_Time = DateTime.Now,
                         PlateNumber = "SV21SCN",
-                        StationId = 1
+                        Station_Id = 1
                     }
                 );
                 //context.User.AddRange(

@@ -1,0 +1,11 @@
+﻿@model ProiectColectiv.Models.Booking
+
+<title>Success</title>
+<div class="text-center">
+    <h1 class="display-4"><b>Congrats</b></h1>
+    <p><b>Your booking has been saved.</b></p>    
+    <p><b>Your booking for the car with number "@Html.DisplayFor(model => model.PlateNumber)"</b></p>
+    <p><b>is from @Html.DisplayFor(model => model.Start_Time) until @Html.DisplayFor(model => model.End_Time)</b></p>
+    <p><b><a href="~/UserMap/UserMap">Go back to map.</a></b></p>
+
+</div>

@@ -1,7 +1,7 @@
 ﻿@model ProiectColectiv.Models.Booking
 
 @{
-    ViewBag.Title = "title";
+    ViewBag.Title = "Booking";
     Layout = "_Layout";
 }
 
@@ -9,7 +9,7 @@
 <hr />
 
 <div>
-    <div class="centerForm">
+    <div class="centerForm text-center">
         <form asp-action="Booking">
 
             <div asp-validation-summary="ModelOnly" class="text-center"></div>
@@ -31,16 +31,20 @@
                 <label asp-for="PlateNumber"></label>
                 <input asp-for="PlateNumber" class="form-control"/>
                 <span asp-validation-for="PlateNumber" class="text-danger"></span>
-            </div>                
-
-                
-
+            </div>
             <div class="form-group">
+                <label asp-for="IsFastCharging"></label>
+                <input asp-for="IsFastCharging" class="form-control" />
+                <span asp-validation-for="IsFastCharging" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group text-center">
                 <input id="rzvr" type="submit" value="Booking" class="btn btn-outline-success" />
                 <a asp-action="UserMap" asp-controller="UserMap" class="btn btn-outline-danger">Cancel</a>
             </div>
 
-            
+
         </form>
     </div>
 </div>
