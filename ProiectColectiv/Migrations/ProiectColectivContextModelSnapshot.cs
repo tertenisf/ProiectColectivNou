@@ -15,7 +15,7 @@ namespace ProiectColectiv.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.2.4-servicing-10062")
+                .HasAnnotation("ProductVersion", "2.2.3-servicing-35854")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -31,7 +31,7 @@ namespace ProiectColectiv.Migrations
 
                     b.Property<DateTime>("Start_Time");
 
-                    b.Property<int?>("StationId");
+                    b.Property<int>("StationId");
 
                     b.HasKey("Id");
 
@@ -116,7 +116,8 @@ namespace ProiectColectiv.Migrations
                 {
                     b.HasOne("ProiectColectiv.Models.Station")
                         .WithMany("bookings")
-                        .HasForeignKey("StationId");
+                        .HasForeignKey("StationId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("ProiectColectiv.Models.Station", b =>

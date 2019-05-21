@@ -13,109 +13,118 @@ namespace ProiectColectiv.Models
         {
             using (var context = new ProiectColectivContext(serviceProvider.GetRequiredService<DbContextOptions<ProiectColectivContext>>()))
             {
-                if (context.Parkings.Any())
+                if (context.Booking.Any())
                 {
                     return;
                 }
 
-                context.Stations.AddRange(
-                    new Station
+                //context.Stations.AddRange(
+                //    new Station
+                //    {
+                //        IsFastCharging = true,
+                //        //PlateNumber = "SV21SCN",
+                //        DailyGain = "120",
+                //        MonthlyGain = "350",
+                //        WeeklyGain = "150"
+                //    },
+                //    new Station
+                //    {
+                //        IsFastCharging = false,
+                //        //PlateNumber = "SV20SCN",
+                //        DailyGain = "130",
+                //        MonthlyGain = "450",
+                //        WeeklyGain = "250"
+                //    },
+                //    new Station
+                //    {
+                //        IsFastCharging = false,
+                //        //PlateNumber = "SV18SCN",
+                //        DailyGain = "200",
+                //        MonthlyGain = "550",
+                //        WeeklyGain = "350"
+                //    }
+                //    );
+                //context.Parkings.AddRange(
+                //    new Parking
+                //    {
+                //        Name = "Manastur",
+                //        Latitudine = 46.753712,
+                //        Longitudine = 23.563520,
+                //        NrNormalChargingSpots = 12,
+                //        NrFastChargingSpots = 6
+                //    },
+                //    new Parking
+                //    {
+                //        Name = "Clinicilor",
+                //        Latitudine = 46.765220,
+                //        Longitudine = 23.580070,
+                //        NrFastChargingSpots = 7,
+                //        NrNormalChargingSpots = 7,
+                //    },
+                //      new Parking
+                //      {
+                //          Name = "Unirii",
+                //          Latitudine = 46.753712,
+                //          Longitudine = 23.563520,
+                //          NrFastChargingSpots = 5,
+                //          NrNormalChargingSpots = 5,
+                //      },
+                //new Parking
+                //{
+                //    Name = "Campului",
+                //    Latitudine = 46.746490,
+                //    Longitudine = 23.569220,
+                //    NrNormalChargingSpots = 12,
+                //    NrFastChargingSpots = 6
+                //},
+                //    new Parking
+                //    {
+                //        Name = "Septimiu Albini",
+                //        Latitudine = 46.765010,
+                //        Longitudine = 23.611470,
+                //        NrNormalChargingSpots = 12,
+                //        NrFastChargingSpots = 6
+                //    }
+                //    );
+                context.Booking.AddRange(
+                    new Booking
                     {
-                        IsFastCharging = true,
-                        //PlateNumber = "SV21SCN",
-                        DailyGain = "120",
-                        MonthlyGain = "350",
-                        WeeklyGain = "150"
-                    },
-                    new Station
-                    {
-                        IsFastCharging = false,
-                        //PlateNumber = "SV20SCN",
-                        DailyGain = "130",
-                        MonthlyGain = "450",
-                        WeeklyGain = "250"
-                    },
-                    new Station
-                    {
-                        IsFastCharging = false,
-                        //PlateNumber = "SV18SCN",
-                        DailyGain = "200",
-                        MonthlyGain = "550",
-                        WeeklyGain = "350"
+                        Start_Time = DateTime.Now,
+                            End_Time = DateTime.Now,
+                        PlateNumber = "SV21SCN",
+                        StationId = 1
                     }
-                    );
-                context.Parkings.AddRange(
-                    new Parking
-                    {
-                        Name = "Manastur",
-                        Latitudine = 46.753712,
-                        Longitudine = 23.563520,
-                        NrNormalChargingSpots = 12,
-                        NrFastChargingSpots = 6
-                    },
-                    new Parking
-                    {
-                        Name = "Clinicilor",
-                        Latitudine = 46.765220,
-                        Longitudine = 23.580070,
-                        NrFastChargingSpots = 7,
-                        NrNormalChargingSpots = 7,
-                    },
-                      new Parking
-                      {
-                          Name = "Unirii",
-                          Latitudine = 46.753712,
-                          Longitudine = 23.563520,
-                          NrFastChargingSpots = 5,
-                          NrNormalChargingSpots = 5,
-                      },
-                new Parking
-                {
-                    Name = "Campului",
-                    Latitudine = 46.746490,
-                    Longitudine = 23.569220,
-                    NrNormalChargingSpots = 12,
-                    NrFastChargingSpots = 6
-                },
-                    new Parking
-                    {
-                        Name = "Septimiu Albini",
-                        Latitudine = 46.765010,
-                        Longitudine = 23.611470,
-                        NrNormalChargingSpots = 12,
-                        NrFastChargingSpots = 6
-                    }
-                    );
-                context.User.AddRange(
-                    new User
-                    {
-                        Name = "Ion",
-                        Email = "aiaE@aiaE.com",
-                        Password = "admin",
-                        isAdmin = false
-                    },
-                new User
-                {
-                    Name = "x",
-                    Email = "xxxx@x.com",
-                    Password = "admin",
-                    isAdmin = false
-                },
-                new User
-                {
-                    Name = "Admin",
-                    Email = "admin@admin.com",
-                    Password = "admin",
-                    isAdmin = true
-                },
-                new User
-                {
-                    Name = "gion",
-                    Email = "Gion@Gion.com",
-                    Password = "gion",
-                    isAdmin = true
-                }
-                    );
+                );
+                //context.User.AddRange(
+                //    new User
+                //    {
+                //        Name = "Ion",
+                //        Email = "aiaE@aiaE.com",
+                //        Password = "admin",
+                //        isAdmin = false
+                //    },
+                //new User
+                //{
+                //    Name = "x",
+                //    Email = "xxxx@x.com",
+                //    Password = "admin",
+                //    isAdmin = false
+                //},
+                //new User
+                //{
+                //    Name = "Admin",
+                //    Email = "admin@admin.com",
+                //    Password = "admin",
+                //    isAdmin = true
+                //},
+                //new User
+                //{
+                //    Name = "gion",
+                //    Email = "Gion@Gion.com",
+                //    Password = "gion",
+                //    isAdmin = true
+                //}
+                //    );
                 context.SaveChanges();
             }
         }
