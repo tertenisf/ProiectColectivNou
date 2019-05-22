@@ -54,11 +54,15 @@ namespace ProiectColectiv.Migrations
 
                     b.Property<double>("Longitudine");
 
+                    b.Property<int>("MonthlyGain");
+
                     b.Property<string>("Name");
 
                     b.Property<int>("NrFastChargingSpots");
 
                     b.Property<int>("NrNormalChargingSpots");
+
+                    b.Property<int>("WeeklyGain");
 
                     b.Property<bool>("isClosed");
 

@@ -27,7 +27,11 @@ function initMap() {
                         '<p><b> Numar locuri Fast Charging: </b>' +
                         data[i].nrFastChargingSpots +
                         '<p><b> Numar locuri care nu-s Fast Charging: </b>' +
-                        data[i].nrNormalChargingSpots+
+                        data[i].nrNormalChargingSpots +
+                        '<p><b> Castig in aceasta luna: </b>' +
+                        data[i].monthlyGain + ' Lei' +
+                        '<p><b> Castig in acest an: </b>' +
+                        data[i].weeklyGain + ' Lei' +
                     '<div><input type="submit" id="' + data[i].id + '" value="Open" class="btn btn-outline-success" onClick="SetStationStatus(this)"></div>';
                 } else {
                     contentString[i] = '<div id="content">' +
@@ -40,7 +44,11 @@ function initMap() {
                         '<p><b> Numar locuri Fast Charging: </b>' +
                         data[i].nrFastChargingSpots +
                         '<p><b> Numar locuri care nu-s Fast Charging: </b>' +
-                        data[i].nrNormalChargingSpots+
+                        data[i].nrNormalChargingSpots +
+                        '<p><b> Castig in aceasta luna: </b>' +
+                        data[i].monthlyGain + ' Lei' +
+                        '<p><b> Castig in acest an: </b>' +
+                        data[i].weeklyGain + ' Lei' +
                     '<div><input type="submit" id="' + data[i].id + '" value="Close" class="btn btn-outline-danger" onClick="SetStationStatus(this)"></div>';
                 }
 

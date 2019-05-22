@@ -19,6 +19,8 @@ namespace ProiectColectiv.Models
 
         public int NrNormalChargingSpots { get; set; }
         
+        public int MonthlyGain { get; set; }
+        public int WeeklyGain { get; set; }
         public List<Station> Stations { get; set; }
         public bool isClosed { get; set; }
     }
